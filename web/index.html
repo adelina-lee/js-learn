@@ -6,10 +6,6 @@
     <title>Document</title>
 </head>
 <body>
-    <!-- Alert popup -->
-    <script type="text/javascript" src="/js/ch1_alert.js"></script>
-    <script type="text/javascript" src="/js/ch9/ch9.js"></script>
-
     <h1>Table</h1>
     <table>
         <tr>
@@ -34,6 +30,15 @@
     <div id="two" class="example">Hi!</div>
     <div id="three" class="something">Hi!</div>
 
+    <div id="one" onclick="alert('Ouch! Stop it!')">Don't click here!</div>
+    <div id="one" onclick="stop()">Don't click here!</div>
+    <div id="four">Don't click here!</div>
+
+    <!-- JS scripts -->
+    <script type="text/javascript" src="/js/ch1_alert.js"></script>
+    <script type="text/javascript" src="/js/ch9/ch9.js"></script>
+    <script type="text/javascript" src="/js/ch9/element_click_handler.js"></script>
+
     <script>
         const output = document.querySelector('.output');
         output.textContent = "Hello World";
@@ -42,6 +47,15 @@
         output.style.backgroundColor = "red";
         console.log(document.URL);
         output.textContent = document.URL;
+    </script>
+
+    <script>
+        // Using getElement
+        console.log(document.getElementById("two"));
+        console.log(document.getElementsByTagName("h1"));
+        
+        // Using querySelector()
+        document.querySelector("div");
     </script>
 </body>
 </html>
