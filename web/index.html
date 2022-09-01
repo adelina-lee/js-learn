@@ -1,11 +1,15 @@
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
+    <input onchange="go(this)"></input>
+
     <h1>Table</h1>
     <table>
         <tr>
@@ -34,10 +38,19 @@
     <div id="one" onclick="stop()">Don't click here!</div>
     <div id="four">Don't click here!</div>
 
+    <button onclick="reveal(this)">Click here!</button>
+
     <!-- JS scripts -->
     <script type="text/javascript" src="/js/ch1_alert.js"></script>
     <script type="text/javascript" src="/js/ch9/ch9.js"></script>
     <script type="text/javascript" src="/js/ch9/element_click_handler.js"></script>
+    <script type="text/javascript" src="/js/ch9/dom.js"></script>
+
+    <script>
+        function go(e) {
+            eval(e.value);
+        }
+    </script>
 
     <script>
         const output = document.querySelector('.output');
@@ -47,6 +60,7 @@
         output.style.backgroundColor = "red";
         console.log(document.URL);
         output.textContent = document.URL;
+
     </script>
 
     <script>
@@ -58,4 +72,5 @@
         document.querySelector("div");
     </script>
 </body>
+
 </html>
