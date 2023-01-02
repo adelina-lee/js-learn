@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Welcome page</h1>
+    <p id="greeting1">Hi!</p>
+    <p id="greeting2">Hi!</p>
+    <script>
+        // Traverse to the p element
+        document.body.children.greeting1;
+
+        // Changing greeting1 text
+        document.body.children.greeting1.innerText = "Bye!";
+
+        // Changing greeting2 text with HTML
+        document.body.children.greeting2.innerHTML = "<b>Bye!</b>";
+    </script>
+
+    <h1>Accessing elements by ID</h1>
+    <div id="one" class="example">Hi!</div>
+    <div id="two" class="example">Hi!</div>
+    <div id="three" class="example">Hi!</div>
+    <script>
+        // Select element
+        document.getElementById("two");
+        // Output element
+        console.log(document.getElementById("two"))
+
+        // Accessing elements by tag name
+        console.log(document.getElementsByTagName("div"));
+
+        // Accessing elements by tag name & index
+        console.log(document.getElementsByTagName("div").item(1));
+
+        // Return h1
+        console.log(document.getElementsByTagName("h1"));
+
+        // By class name
+        console.log(document.getElementsByClassName("example"));
+
+        // Using a CSS Selector
+        console.log(document.querySelectorAll("p"));
+
+        // Only returns the first one it encounters
+        // Using query selector
+        console.log(document.querySelector("div"));
+        // Return class
+        console.log(document.querySelector(".example"));
+
+        // Returns all
+        console.log(document.querySelectorAll("div"));
+    </script>
+
+    <button id="buttonOne" onclick="stop()">Don't click here!</button>
+    <button id="buttonTwo" onclick="stop()">Don't click here! 2</button>
+    <script>
+        function stop() {
+            alert("Ouch! Stop it!");
+        }
+
+        document.getElementById("buttonTwo").onclick = function() {
+            alert("Auch! Stop!");
+        }
+    </script>
+
+    <!-- Stopped at pg 238 -->
+</body>
+</html>
