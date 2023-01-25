@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="unique" onclick="magic()">Click here for magic!</p>
+
+    <div id="divvy" onmouseover="changeColor()" style="width: 100px; height: 100px; background-color: pink;"></div>
+
+    <div id="divvy2" style="width: 100px; height: 100px; background-color: pink;"></div>
+
+    <!-- Form -->
+    <div id="welcome">Hi there!</div>
+    <form>
+        <input type="text" name="firstname" placeholder="First name" />
+        <input type="text" name="lastname" placeholder="Last name" />
+        <input type="button" onclick="sendInfo()" value="Submit">
+    </form>
+    
+    <script>
+        document.getElementById("unique").onclick = function()
+            { magic(); };
+    </script>
+
+    <script>
+        document.getElementById("unique").addEventListener("click", magic);
+    </script>
+
+    <script>
+        document.getElementById("unique").addEventListener("click", function() { magic(arg1, arg2) });
+    </script>
+
+    <script>
+        function changeColor() {
+            document.getElementById("divvy").style.backgroundColor = "blue";
+        }
+    </script>
+
+    <script>
+        window.onload = function donenow() {
+            console.log('hi');
+            document.getElementById("divvy2").addEventListener("mousedown",
+                function() { changeColor(this, "green"); });
+            document.getElementById("divvy2").addEventListener("mouseup",
+                function() { changeColor(this, "yellow"); });
+            document.getElementById("divvy2").addEventListener("dblclick",
+                function() { changeColor(this, "black"); });
+            document.getElementById("divvy2").addEventListener("mouseout",
+                function() { changeColor(this, "blue"); });
+            console.log("hi2");
+        }
+
+        function changeColor(el, color) {
+            el.style.backgroundColor = color;
+        }
+    </script>
+
+    <!-- Form -->
+    <script>
+        function sendInfo() {
+            let p = event.target.parentElement;
+            message("Welcome " + p.firstname.value + " " + p.lastname.
+            value);
+        }
+
+        function message(m) {
+            document.getElementById("welcome").innerHTML = m;
+        }
+    </script>
+</body>
+</html>
